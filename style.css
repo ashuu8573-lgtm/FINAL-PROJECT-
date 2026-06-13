@@ -1,0 +1,29 @@
+:root {
+    --transition-speed: 0.25s;
+}
+
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Hover effects for hostel utility list cards */
+.hostel-card {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.hostel-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* Error message banner border accent */
+.error-banner {
+    border-left: 5px solid #dc3545;
+}
+
+/* Utility visibility state toggle mapping */
+#loadingSpinner {
+    display: none;
+}

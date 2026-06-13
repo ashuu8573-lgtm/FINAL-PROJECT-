@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Hosteler - Student Mess & Utility Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">🏢 Pocket Hosteler</a>
+            <div class="ms-auto">
+                <a class="btn btn-outline-light btn-sm fw-semibold" href="admin.html">Hostel Admin Console →</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            
+            <section class="col-lg-5">
+                <div class="card shadow-sm border-0 rounded-3">
+                    <div class="card-body p-4">
+                        <h4 class="card-title fw-bold mb-4 text-dark">Log Hostel Bill / Cost</h4>
+                        
+                        <form id="hostelForm" novalidate>
+                            <div class="mb-3">
+                                <label for="category" class="form-label fw-semibold text-muted">Hostel Domain Category</label>
+                                <select id="category" class="form-select">
+                                    <option value="">Select a category</option>
+                                    <option value="Monthly Mess">Monthly Mess</option>
+                                    <option value="Room Utilities">Room Utilities</option>
+                                    <option value="Laundry">Laundry</option>
+                                    <option value="Night Snacks">Night Snacks</option>
+                                </select>
+                                <div id="categoryError" class="text-danger small mt-1 fw-medium"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label fw-semibold text-muted">Bill Description</label>
+                                <input type="text" id="title" class="form-control" placeholder="e.g., Weekly Laundry, Mess Extra Chicken">
+                                <div id="titleError" class="text-danger small mt-1 fw-medium"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="amount" class="form-label fw-semibold text-muted">Cost Amount (PKR)</label>
+                                <input type="number" id="amount" class="form-control" placeholder="0.00">
+                                <div id="amountError" class="text-danger small mt-1 fw-medium"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="date" class="form-label fw-semibold text-muted">Date Paid</label>
+                                <input type="date" id="date" class="form-control">
+                                <div id="dateError" class="text-danger small mt-1 fw-medium"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold text-muted d-block">Transaction Method</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="payCash" value="Cash" checked>
+                                    <label class="form-check-label text-dark" for="payCash">Cash</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="payEasyPaisa" value="EasyPaisa">
+                                    <label class="form-check-label text-dark" for="payEasyPaisa">EasyPaisa</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100 fw-bold py-2 mt-2">Add to Shared Ledger</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-lg-7">
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center mb-4 gap-3">
+                    <h4 class="fw-bold text-dark m-0">Room & Mess Ledger Statement</h4>
+                    
+                    <div class="d-flex align-items-center gap-2">
+                        <label for="filterCategory" class="text-nowrap small fw-semibold text-secondary">Filter Domain:</label>
+                        <select id="filterCategory" class="form-select form-select-sm shadow-sm" style="width: 170px;">
+                            <option value="All">All Transactions</option>
+                            <option value="Monthly Mess">Monthly Mess</option>
+                            <option value="Room Utilities">Room Utilities</option>
+                            <option value="Laundry">Laundry</option>
+                            <option value="Night Snacks">Night Snacks</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="loadingSpinner" class="text-center py-5">
+                    <div class="spinner-border text-success" role="status"></div>
+                    <p class="text-muted mt-2 small fw-medium">Loading hostel shared records database...</p>
+                </div>
+
+                <div id="errorBanner" class="alert alert-danger error-banner d-none" role="alert"></div>
+
+                <div id="ledgerContainer" class="row g-3"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

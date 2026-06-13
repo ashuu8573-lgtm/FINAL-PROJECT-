@@ -1,0 +1,29 @@
+{
+  "expenses": [
+    {
+      "id": "1",
+      "title": "May Monthly Mess Bill",
+      "amount": 6500,
+      "category": "Monthly Mess",
+      "date": "2026-05-31",
+      "paymentMethod": "EasyPaisa"
+    },
+    {
+      "id": "2",
+      "title": "Room Cooler Repair Share",
+      "amount": 450,
+      "category": "Room Utilities",
+      "date": "2026-06-02",
+      "paymentMethod": "Cash"
+    },
+    {
+      "title": "June Mess Bill",
+      "amount": 4600,
+      "category": "Monthly Mess",
+      "date": "2026-06-04",
+      "paymentMethod": "Cash",
+      "id": "WLQoeSjIVUI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
