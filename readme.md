@@ -5,7 +5,7 @@ Pocket Hosteler is a streamlined, full-stack web application designed for studen
 ---
 
 ## 👤 Student Information
-* **Student Name:** Aisha Imran
+* **Student Name:** Ayesha Imran
 * **Roll Number:** F24BDOCS1M01066
 * **Section:** 2M
 * **Course:** Web Technologies (Final Project / Assignment Submission)
